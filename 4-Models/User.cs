@@ -8,5 +8,5 @@ public class User{
     public string Password {get; set;}
 
 
-    // public List<> Cats {get; set;}
+    public List<Cat> Cats {get; set;}
 }

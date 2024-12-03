@@ -25,7 +25,7 @@ public class CatService : ICatService{
             var user = _userService.GetUserById(userId).Result;
             if(user is not null){
                 Cat newCat = cUtil.DTOtoCat(catToStore);
-                newCat.Owner = user;
+                newCat.User = user;
                 return _catRepo.AddCat(newCat);
             }
             return null;

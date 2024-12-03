@@ -16,9 +16,14 @@ public class CatstoneDbContext: DbContext{
     protected override void OnModelCreating(ModelBuilder modelBuilder)
     {
         // base.OnModelCreating(modelBuilder);
+
+        modelBuilder.Entity<User>()
+            .HasMany(u => u.Cats)
+            .WithOne(c => c.User)
+            .HasForeignKey(c => c.UserId);
+
         
-            
-        
+    
     }
 
 

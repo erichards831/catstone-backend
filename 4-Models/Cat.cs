@@ -18,8 +18,8 @@ public class Cat{
     // favorite relationship here
     public bool Favorite {get; set;}
 
-    [JsonIgnore]
-    public User? Owner {get; set;}
+    public int UserId {get; set;}
+    public User User {get; set;} = null;
 
     
 }
