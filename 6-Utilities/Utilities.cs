@@ -6,11 +6,12 @@ namespace CatstoneApi.Utilities;
 public static class CatUtility{
     public static Cat DTOtoCat(CatDTO catDTO){
         Cat newCat = new(){
-            CatId = catDTO.CatId,
             ImgId = catDTO.ImgId,
             Width = catDTO.Width,
+            Url = catDTO.Url,
             Height = catDTO.Height,
-            Favorite = false            // change when put method added
+            Favorite = false,          // change when put method added
+            UserId = catDTO.UserId
         };
 
         return newCat;
