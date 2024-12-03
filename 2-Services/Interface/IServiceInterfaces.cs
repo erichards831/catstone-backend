@@ -10,3 +10,10 @@ public interface IUserService{
     Task<User?> UpdateUser(int id, UserDTO updateUser);
     Task<User?> DeleteUser(int id);
 }
+
+public interface ICatService{
+    Cat AddCat(CatDTO newCatDTO);
+    Cat? AddCatToUser(int userId, CatDTO catToStore);
+    List<Cat> GetAllCats();
+    Cat? GetCatById(int id);
+}

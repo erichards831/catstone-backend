@@ -11,3 +11,9 @@ public interface IUserRepo{
     Task<User?> DeleteUser(int id);
 
 }
+
+public interface ICatRepo{
+    Cat AddCat(Cat newCat);
+    List<Cat> GetAllCats();
+    Cat? GetCatById(int id);
+}

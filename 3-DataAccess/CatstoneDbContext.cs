@@ -10,6 +10,16 @@ public class CatstoneDbContext: DbContext{
     public CatstoneDbContext(DbContextOptions options) :base(options ){}
 
     public DbSet<User> Users {get; set;}
+    public DbSet<Cat> Cats {get; set;}
 
-    
+
+    protected override void OnModelCreating(ModelBuilder modelBuilder)
+    {
+        // base.OnModelCreating(modelBuilder);
+        
+            
+        
+    }
+
+
 }
