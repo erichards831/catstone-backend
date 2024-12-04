@@ -17,3 +17,10 @@ public interface ICatService{
     List<Cat> GetAllCats();
     Cat? GetCatById(int id);
 }
+
+
+public interface ITokenService{
+    Task<User> LoginAsync(UserDTO userDTO);
+    Task LogoutAsync();
+
+}
