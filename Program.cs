@@ -1,5 +1,6 @@
 using CatstoneApi.Data;
 using CatstoneApi.Services;
+using CatstoneApi.Utilities;
 using Microsoft.EntityFrameworkCore;
 
 var builder = WebApplication.CreateBuilder(args);
@@ -28,9 +29,12 @@ builder.Services.AddSwaggerGen();
 // Register dependencies
 builder.Services.AddScoped<IUserService, UserService>();
 builder.Services.AddScoped<ICatService, CatService>();
+builder.Services.AddScoped<IAuthService, AuthService>();
 
 builder.Services.AddScoped<IUserRepo, UserRepo>();
 builder.Services.AddScoped<ICatRepo, CatRepo>();
+
+builder.Services.AddScoped<IHasher, Hasher>();
 
 
 builder.Services.AddDbContext<CatstoneDbContext>(options => 

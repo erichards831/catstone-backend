@@ -19,8 +19,8 @@ public interface ICatService{
 }
 
 
-public interface ITokenService{
-    Task<User> LoginAsync(UserDTO userDTO);
+public interface IAuthService{
+    Task<UserResponseDTO> LoginAsync(UserDTO userDTO);
     Task LogoutAsync();
 
 }
