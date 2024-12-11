@@ -91,6 +91,7 @@ public class Hasher : IHasher{
         var tokenDescriptor = new SecurityTokenDescriptor{
             Subject = new ClaimsIdentity(new[] {new Claim(ClaimTypes.Name, user.Username)}),
             Expires = DateTime.UtcNow.AddMinutes(_jwtSettings.ExpireInMinutes),
+            NotBefore = DateTime.UtcNow.Date,
             SigningCredentials = new SigningCredentials(new SymmetricSecurityKey(key), SecurityAlgorithms.HmacSha256Signature)
 
         };

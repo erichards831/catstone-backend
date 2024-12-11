@@ -32,9 +32,13 @@ public class AuthService : IAuthService{
             throw new UnauthorizedAccessException("User not found!");
         }
 
+        
+
         // update User model 
         var storedHash = user.PasswordHash;
         var storedSalt = user.Salt;
+
+
 
         if (string.IsNullOrEmpty(storedHash) || string.IsNullOrEmpty(storedSalt))
         {

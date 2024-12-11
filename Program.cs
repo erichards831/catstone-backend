@@ -5,6 +5,7 @@ using Microsoft.EntityFrameworkCore;
 
 var builder = WebApplication.CreateBuilder(args);
 
+
 // CORS CORS CORS CORS CORS CORS CORS CORS CORS
 builder.Services.AddCors(co => {
     co.AddPolicy("CORS", pb => {
@@ -12,6 +13,9 @@ builder.Services.AddCors(co => {
         .AllowAnyHeader();
     });
 });
+
+builder.Services.Configure<JwtSettings>(builder.Configuration.GetSection("JwtSettings"));
+
 
 // Add services to the container.
 
